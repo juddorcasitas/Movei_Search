@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="container">
+    <form autocomplete="off" class="" action="index.html" method="post">
+      <input id="search" type="search" ng-model="$ctrl.keywords" ng-change="$ctrl.getMovies()" name="Search" placeholder="Search a Movie">
+      <div class="img" id="search_submit"></div>
+    </form>
+    <div id="results-wrapper" class="row">
+      <div drag-scroll ng-mousedown="$ctrl.mouseDownEv()" ng-mousemove="$ctrl.mouseMoveEv($event)" ng-mouseup="$ctrl.mouseUpEv()" ng-show="$ctrl.keywords" class="card-deck">
+        <div ng-click="$ctrl.clickable || $ctrl.selectMovie($index)" class="card" ng-repeat="i in $ctrl.movies">
+          <img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w185/{{i.poster_path}}" onerror="this.onerror=null;this.src='media/default-placeholder.png'">
+          <div class="card-block">
+            <h5 class="card-title">{{i.title | limitTo:20}}</h5>
+            <h5 class="card-title">({{i.release_date | date:'yyyy' }})</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div id="jumbotron" class="container jumbotron" ng-style="{'background-image': 'url(' + mCtrl.backgroundUrl+ ')'}">
+    <div class="col-md-6">
+      <div id="card-overlay" class="card card-movie-info">
+        <img id="movie-info-card" class="card-img-top" ng-src="{{mCtrl.movieCard}}" ng-onerror="{{mCtrl.onError}}">
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+  <div id="movie-info-wrapper" class="container">
+    <div id="movie-meta" class="col-md-4">
+      <div class="padding"></div>
+      <div class="col-md-4"><h1>{{mCtrl.voteAvg * 10}}</h1></div>
+    </div>
+    <div class="col-md-8 movie-header">
+      <div class="row">
+        <h1>{{mCtrl.movieDetail.original_title}} ({{mCtrl.movieDetail.release_date | date:'yyyy' }})</h1>
+        <div class="col-md-8">
+          <p>{{mCtrl.movieDetail.overview}}</p>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+      <div class="row">
+        <span id="genres" ng-repeat="genre in mCtrl.movieDetail.genres" class="badge badge-pill badge-info">{{genre.name}} </span>
+      </div>
+    </div>
+  </div>
+
+</div>

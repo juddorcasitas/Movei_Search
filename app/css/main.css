@@ -1,0 +1,316 @@
+/* ---------------------------- Searc Bar ----------------------------  */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500');
+
+h1,h2,h3{
+  font-family: "Oswald";
+}
+
+.container{
+  max-width: 1024px;
+}
+
+#search {
+    height: 75px;
+  font-size: 55px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  float: left;
+  border: none;
+  border-bottom: 1px solid #BBB;
+  outline: none;
+  color: #555;
+  padding-top: 10px;
+  width: 40%;
+  position: relative;
+  top: 0;
+  background: none;
+  z-index: 0;
+  transition: width .7s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+
+}
+
+#search:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+#search:focus {
+  margin-left: 0;
+  width: 80%;
+  z-index: 0;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}
+#search_submit {
+  margin-top: 10px;
+  height: 70px;
+  width: 65px;
+  position:relative;
+  display: inline-block;
+  color:red;
+  float: left;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  top: 0;
+  z-index: 0;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+/* ---------------------------- Results ----------------------------  */
+#results-wrapper {
+  margin-top: 80px;
+}
+
+/* ---------------------------- CARDS ----------------------------  */
+.card{
+  background-color: white;
+  top: 0 !important;
+  width:185px;
+  display:inline-block;
+  margin:5px;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.67);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.67);
+
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+.card-img-top{
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 185px;
+  height: 278px;
+}
+
+.card:hover{
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 10px 2px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 3px 10px 2px rgba(0,0,0,0.67);
+box-shadow: 0px 3px 10px 2px rgba(0,0,0,0.67);
+}
+.card-block{
+  word-wrap: break-word;
+}
+.card-deck{
+  vertical-align: top;
+  height: 400px;
+  overflow:auto;
+  white-space: nowrap;
+}
+
+.card-deck.ng-hide-add,
+.card-deck.ng-hide-remove{
+  -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 2s;
+}
+@-webkit-keyframes slide {
+    100% { bottom: 0; }
+}
+
+@keyframes slide {
+    100% { bottom: 0; }
+}
+
+
+.card-deck::-webkit-scrollbar {
+    display: none;
+}
+
+.card-title{
+
+  font-family: "Lato";
+  padding-left: 4px;
+  word-wrap: break-word;
+  vertical-align: middle;
+}
+
+#card-overlay{
+  position: absolute;
+  top: 200px !important;
+}
+
+
+.card-movie-info{
+  cursor: default !important;
+}
+.card-movie-info:hover{
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.67);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.67);
+}
+
+
+/* ---------------------------- Movie Info----------------------------  */
+#jumbotron{
+  height: 420px !important;
+  background-color: #D3D3D3;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 0px !important;
+  border-radius: 0px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#movie-info-wrapper{
+  padding-top: 30px;
+}
+
+#movie-meta{
+  text-align: center;
+}
+
+#movie-info-card{
+  -webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+.padding{
+  height: 90px;
+}
+#genres{
+  margin: 10px;
+  padding: 7px;
+}
+
+.movie-header{
+  background-color: lightgrey;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+@media screen and (max-device-width: 768px) {
+  .container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .card{
+    width:125px;
+    margin:3px;
+  }
+
+  .card-img-top{
+    width: 125px;
+    height: 218px;
+  }
+  .card-deck{
+    height: 350px;
+  }
+
+
+  #search {
+    height: 75px;
+    font-size: 40px;
+    width: 100%;
+  }
+
+  #search:focus {
+    width: 100%;
+  }
+
+  #search_submit{
+    width: 0;
+  }
+
+  p{
+    font-size: 20px;
+  }
+  #jumbotron{
+    height: 380px !important;
+    background-position: center center;
+  }
+  #card-overlay, #movie-info-card{
+    width: 150px;
+    height: 240px;
+  }
+  .padding{
+    height: 48px;
+  }
+  #movie-meta{
+    margin-left: 20%;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .card{
+    width:125px;
+    margin:3px;
+  }
+
+  .card-img-top{
+    width: 125px;
+    height: 218px;
+  }
+  .card-deck{
+    height: 350px;
+  }
+
+
+  #search {
+    height: 75px;
+    font-size: 40px;
+    width: 100%;
+  }
+
+  #search:focus {
+    width: 100%;
+  }
+
+  #search_submit{
+    width: 0;
+  }
+
+  p{
+    font-size: 20px;
+  }
+  #jumbotron{
+    height: 380px !important;
+    background-position: center center;
+  }
+  #card-overlay, #movie-info-card{
+    width: 150px;
+    height: 240px;
+  }
+  .padding{
+    height: 48px;
+  }
+  #movie-meta{
+    margin-left: 20%;
+  }
+
+}
